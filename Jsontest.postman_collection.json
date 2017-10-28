@@ -1,0 +1,267 @@
+{
+	"info": {
+		"name": "Jsontest",
+		"_postman_id": "f1f16969-8861-f99c-5538-26f05f756637",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jsontest01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"User Id is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].userId).to.eql(1);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/posts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "jsontest02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"User Id is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].userId).to.eql(1);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"timestampHeader\", new Date());",
+							"var userId=100;",
+							"pm.environment.set(\"userId\", userId);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "timestamp",
+						"value": "{{timestampheader}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/posts?userId=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "jsontest02 copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"User Id is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].userId).to.eql(1);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"timestampHeader\", new Date());",
+							"var userId=2;",
+							"pm.environment.set(\"userId\", userId);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "timestamp",
+						"value": "{{timestampheader}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/posts?userId={{userId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}",
+							"equals": true
+						}
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "jsontest02 copy copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"User Id is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].userId).to.eql(1);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"timestampHeader\", new Date());",
+							"var userId=2;",
+							"pm.environment.set(\"userId\", userId);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "timestamp",
+						"value": "{{timestampheader}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"userId\": 11,\n        \"id\": 101,\n        \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n        \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n    }"
+				},
+				"url": {
+					"raw": "{{url}}/posts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		}
+	]
+}
